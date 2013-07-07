@@ -26,13 +26,16 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='css/layout.css') }}"> -->
 
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
-    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet">
+    <!-- <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css" rel="stylesheet"> -->
+    <link href="http://bootswatch.com/flatly/bootstrap.min.css" rel="stylesheet">
+
+
     <style> body { padding-top: 60px; } </style>
     <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
 
     <!--[if lt IE 9]>
       <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+      <![endif]-->
 
     <!-- Favicons
     ================================================== -->
@@ -42,15 +45,40 @@
     <link rel="apple-touch-icon" sizes="114x114" href="{{ url_for('static', filename='img/apple-touch-icon-114x114.png') }}">
 
 </head>
-    <body>
+<body>
+    {% block navbar %}
+    <div class="navbar navbar-fixed-top">
+        <div class="navbar-inner">
+            <div class="container">
+                <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </a>
+                <a class="brand" href="#">EcoCounter</a>
+                <div class="nav-collapse">
+                    <ul class="nav">
+                    </ul>
+                    {% block navbar_right %}
+                    <ul class="nav pull-right">
+                      <li><a href="/">Home</a></li>
 
-        <div class="container page">
-            <div class="content">
-              {% block content %}
-            {% endblock %}
-            </div>
+                  </ul>
+                  {% endblock %}
+              </div><!--/.nav-collapse -->
+          </div>
+      </div>
+  </div>
+  {% endblock %}
 
-        </div>
+
+  <div class="container page">
+    <div class="content">
+        {% block content %}
+        {% endblock %}
+    </div>
+
+</div>
 
       <!-- End Document
       ================================================== -->
@@ -59,5 +87,5 @@
       <script src="http://twitter.github.com/bootstrap/assets/js/bootstrap.js"></script>
       <script src="{{ url_for('static', filename='js/vendor/fastclick.min.js') }}"></script>
       <script src="{{ url_for('static', filename='js/main.js') }}"></script>
-    </body>
-</html>
+  </body>
+  </html>

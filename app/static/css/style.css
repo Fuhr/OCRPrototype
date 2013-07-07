@@ -1,6 +1,12 @@
 body {
-		background: #eeeeef;
+		background-color: #eeeeef;
 	}
+
+.form-actions {
+    margin: 0;
+    background-color: transparent;
+    text-align: center;
+}
 
 .myfileupload-buttonbar input {
         position: absolute;

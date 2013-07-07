@@ -51,7 +51,11 @@
             overflow: visible;
             background-color: red;
             overflow: hidden;
-        }
+     }
+
+     .hide {
+     	display: none;
+     }
 
 
 

@@ -8,29 +8,27 @@
 			<p>3. Let EcoCounter do its magic!</p>
 		</div>
 
-
-       <!--<div class="myfileupload-buttonbar ">
-            <label class="btn large blue">
-                <span class="btn-text"> Capture or select photo(s) </span>
-                <input id="file" type="file" accept="image/*" multiple>
-            </label>
-        </div>
-
-
-		<div class="preview-box">
-			<img id="uploadPreview" style="width: 100px; height: 100px;" />
-			<span> No photo(s) uploaded yet! </span>
-		</div>
-
-		<div class="btn large red">
-			<span class="btn-text"> Let the magic happen!
-			</span>
-		</div> -->
-
 		<form action="" method=post enctype=multipart/form-data>
-      		<p><input type=file name=file>
-        	 <input type=submit value=Upload>
-  		 </form>
+	       	<div class="myfileupload-buttonbar ">
+	            <label class="btn large blue">
+	                <span class="btn-text"> Capture or select photo(s) </span>
+	                <input id="file" name="file" type="file" >
+	              	<!-- <input id="file" name="file" type="file" accept="image/*" multiple capture="camera"> -->
+
+	            </label>
+	        </div>
+
+
+			<div class="preview-box">
+				<img id="uploadPreview"  class="hide" style="width: 100px; height: 100px;" />
+				<span> No photo(s) uploaded yet! </span>
+			</div>
+
+			<label class="btn large red">
+				<span class="btn-text"> Let the magic happen!</span>
+				<input style="display:none;" type=submit value=Upload>
+			</label>
+		</form>
 
 
 {% endblock %}

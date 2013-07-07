@@ -1,6 +1,4 @@
 
-
-
 $(function() {
 	FastClick.attach(document.body);
 
@@ -14,9 +12,10 @@ $(function() {
 
 function PreviewImage() {
 	oFReader = new FileReader();
-	oFReader.readAsDataURL($('file')[0].files[0]);
+	oFReader.readAsDataURL($('#file')[0].files[0]);
 
 	oFReader.onload = function (oFREvent) {
 	    $('#uploadPreview')[0].src = oFREvent.target.result;
+	    $('#uploadPreview').show();
 	};
 };

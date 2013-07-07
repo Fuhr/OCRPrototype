@@ -1,5 +1,5 @@
 import os, sys
-
+import datetime
 from flask import Flask, render_template, request, redirect, url_for
 from werkzeug import secure_filename
 
@@ -27,17 +27,23 @@ def upload_file():
         file = request.files['file']
 
         if file and allowed_file(file.filename):
-            filename = secure_filename(file.filename)
+
+
+            name_split = str(file.filename).split('.')
+
+
+
+            temp_file = name_split[0] + str(datetime.datetime.now()) + '.' + name_split[1]
+            filename = secure_filename(temp_file.decode('utf-8'))
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
 
             image_string = image_file_to_string(UPLOAD_FOLDER + filename)
-
-            return render_template('result.html', result = image_string)
+            print image_string
+            return render_template('result.html', result = image_string.decode('utf-8'))
 
     return render_template('home.html')
 
 
 
-
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', debug=True)

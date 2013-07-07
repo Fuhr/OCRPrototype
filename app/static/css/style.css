@@ -44,10 +44,10 @@ body {
 	border-style: dashed;
 	border-color: #aaaaaa;
 	-moz-border-radius: 0.5em;
-		-webkit-border-radius: 0.5em;
-		border-radius: 0.5em;
+	-webkit-border-radius: 0.5em;
+	border-radius: 0.5em;
 	background: #ffffff;
-	width: 21em;
+	width: 15em;
 	min-height: 4em;
 	line-height: 4em;
 	text-align: center;
@@ -65,33 +65,4 @@ body {
     cursor: pointer;
     overflow: visible;
     overflow: hidden;
-}
-
-.btn-text {
-	color: #f4fbfe;
-	font-size: 1.2em
-}
-
-.btn.large {
-	width: 20em;
-	height: 4em;
-	line-height: 4em;
-}
-
-.blue{
-	background: #a8d6ff;
-}
-
-
-.blue:active{
-	background: #93C7F5;
-}
-
-.red{
-	background: #f77872;
-}
-
-
-.red:active{
-	background: #F06660;
 }

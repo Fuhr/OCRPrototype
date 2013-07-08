@@ -28,8 +28,9 @@
 
     <!-- <link href="http://bootswatch.com/flatly/bootstrap.min.css" rel="stylesheet"> -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
-    <style> body { padding-top: 60px; } </style>
-
+<!--
+    <style> body { padding-top: 100px; } </style>
+ -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/flat-ui.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
@@ -49,39 +50,46 @@
     {% endblock %}
 </head>
 <body>
-    {% block navbar %}
-        <div class="navbar navbar-fixed-top">
-            <div class="navbar-inner">
-                <div class="container">
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <a class="brand" href="#">OCR Receipt</a>
-                    <div class="nav-collapse">
-                        <ul class="nav">
-                        </ul>
-                        {% block navbar_right %}
-                            <ul class="nav pull-right">
-                                <li><a href="/">Home</a></li>
-
+    <div id="wrap">
+        {% block navbar %}
+            <div class="navbar navbar-fixed-top navbar-inverse">
+                <div class="navbar-inner">
+                    <div class="container">
+                        <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </a>
+                        <a class="brand" href="#">OCR Receipt</a>
+                        <div class="nav-collapse">
+                            <ul class="nav">
                             </ul>
-                        {% endblock %}
-                    </div><!--/.nav-collapse -->
+                            {% block navbar_right %}
+                                <ul class="nav pull-right">
+                                    <li><a href="/">Home</a></li>
+
+                                </ul>
+                            {% endblock %}
+                        </div><!--/.nav-collapse -->
+                    </div>
                 </div>
-            </div>
-    </div>
-    {% endblock %}
-
-
-    <div class="container page">
-        <div class="content">
-            {% block content %}
-            {% endblock %}
         </div>
-    </div>
+        {% endblock %}
 
+
+        <div class="container page">
+            <div class="content">
+                {% block content %}
+                {% endblock %}
+            </div>
+        </div>
+        <div id="push"></div>
+    </div>
+    <div id="footer">
+      <div class="container">
+        <p class="muted credit"> Powered by Flask - Work in progress.</p>
+      </div>
+    </div>
     <!-- End Document
     ================================================== -->
     <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>

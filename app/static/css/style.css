@@ -1,6 +1,6 @@
-body {
+/*body {
 		background-color: #eeeeef;
-	}
+	}*/
 
 .form-actions {
     margin: 0;
@@ -55,9 +55,9 @@ body {
 }
 
 .btn {
-	-moz-border-radius: 0.875em;
+/*	-moz-border-radius: 0.875em;
 	-webkit-border-radius: 0.875em;
-	border-radius: 0.875em;
+	border-radius: 0.875em;*/
 	margin: 0.375em auto;
 	background: #929292;
 	text-align: center;
